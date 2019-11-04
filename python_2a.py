@@ -19,6 +19,8 @@ df = df.withColumn("hour", F.hour(F.col("parsed")))
 
 df.printSchema()
 
+
+#en el save se definiria la ruta de s3
 df.orderBy('event_time', 'event_type')\
     .write.partitionBy('date', 'hour')\
     .save("dummy_app_data.parquet", format="parquet")

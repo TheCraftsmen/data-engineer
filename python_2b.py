@@ -9,7 +9,9 @@ spark = SparkSession\
 
 sc = spark.sparkContext
 
-
+"""
+Aca hice el ejericio normal sin usar glue porque no tengo accesso a aws
+"""
 sqlContext = SQLContext(sc)
 df = sqlContext.read.\
     load("dummy_app_data.json", format="json")
